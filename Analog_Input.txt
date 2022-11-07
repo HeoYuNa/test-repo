@@ -1,0 +1,22 @@
+//This file is created in github
+
+
+/*아날로그 핀에 연결된 가변 저항의 값을 읽어서 시리얼 포트에 출력하는 코드
+를 작성하시오. 시리얼 포트의 통신 속도는 9600bps로 하고, 100ms 마다 한
+번씩 출력하시오. */
+
+// C++ code
+
+int analogPin = 0; // 아날로그 핀 설정
+int val = 0;
+void setup()
+{
+Serial.begin(9600); // 시리얼 포트 통신 속도 설정
+}
+void loop()
+{
+val = analogRead(analogPin); // 아날로그 입력
+Serial.print("Analog Input : "); // 시리얼포트에 아날로그
+Serial.println(val); // 입력 값 출력
+delay(100); // 100ms 시간 지연
+}
