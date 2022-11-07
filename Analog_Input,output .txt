@@ -1,0 +1,15 @@
+// C++ code
+
+int analogPin = 0; // 아날로그 입력 핀 설정
+int ledPin = 3; // LED 출력 핀 설정
+int val = 0;
+void setup()
+{
+pinMode(ledPin, OUTPUT); // LED 핀 출력 설정
+}
+void loop()
+{
+val = analogRead(analogPin); // 아날로그 입력
+val = map(val, 0, 1023, 0, 255); // re-mapping
+analogWrite(ledPin, val); // LED에 PWM 출력
+}
