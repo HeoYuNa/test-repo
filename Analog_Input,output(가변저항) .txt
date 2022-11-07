@@ -1,0 +1,24 @@
+/*가변 저항의 아날로그 값이 500 이상이면 LED가 ON되고, 그 이하면 OFF가 되는 코드를
+작성하시오. 그리고 아날로그 값을 시리얼 통신을 이용하여 출력하시오.*/
+
+// C++ code
+
+int analogPin = 0; // 아날로그 입력 핀 설정
+int ledPin = 2; // LED 출력 핀 설정
+int val = 0;
+void setup()
+{
+pinMode(ledPin, OUTPUT); // LED 핀 출력 설정
+Serial.begin(9600); // 시리얼 포트 통신 속도 설정
+}
+void loop()
+{
+val = analogRead(analogPin); // 아날로그 입력
+Serial.print("Analog Input : "); // 시리얼포트에 아날로그
+Serial.println(val); // 입력 값 출력
+delay(100); // 100ms 시간 지연
+if(val > 500) // 아날로그 입력 값이 500이상이면 LED ON
+digitalWrite(ledPin, HIGH);
+else // 500 이하면 LED OFF
+digitalWrite(ledPin, LOW);
+}
