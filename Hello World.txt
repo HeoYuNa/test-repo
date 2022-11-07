@@ -7,6 +7,6 @@ void setup()
 
 void loop()
 {
-  serial.println("master");
+  serial.println("Hello World!");
   delay(1000);
 }
